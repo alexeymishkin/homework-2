@@ -60,7 +60,7 @@
                         <manifest>
                             <addClasspath>true</addClasspath>
                             <classpathPrefix>lib/</classpathPrefix>
-                            <mainClass>homework</mainClass>
+                            <mainClass>Homework</mainClass>
                         </manifest>
                     </archive>
                 </configuration>

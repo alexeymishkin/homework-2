@@ -1,7 +1,7 @@
 import java.util.Date;
 import java.text.SimpleDateFormat;
 
-public class person {
+public class Person {
     static String firstName;
     static String lastName;
     static String middleName;
@@ -14,7 +14,7 @@ public class person {
     {
 
         Date now = new Date();
-        dataGenerator generator = new dataGenerator();
+        DataGenerator generator = new DataGenerator();
         this.sex = generator.generateSex();
         this.firstName = generator.generateString("firstName", this.sex);
         this.lastName = generator.generateString("lastName", this.sex);

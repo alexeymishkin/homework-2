@@ -1,22 +1,16 @@
-import org.apache.poi.hssf.usermodel.HSSFCell;
-import org.apache.poi.hssf.usermodel.HSSFCellStyle;
-import org.apache.poi.hssf.usermodel.HSSFWorkbook;
-import org.apache.poi.hssf.usermodel.HSSFSheet;
-import org.apache.poi.hssf.usermodel.HSSFRow;
-import org.apache.poi.hssf.usermodel.HSSFDataFormat;
+import org.apache.poi.hssf.usermodel.*;
 import java.io.*;
 
+public class ExportUtils {
 
-public class homework {
-    public static void main(String[] args) {
+    public static void exportToExcel(Person[] persons) {
         HSSFWorkbook book = new HSSFWorkbook();
         HSSFSheet sheet = book.createSheet("data");
-        int len = dataGenerator.anyRandomIntRange(1,31);
-        person[] persons = new person[len] ;
-        int i =0;
-        while (i<len-1) {
+        //for (int i=0;i<persons.length;i++) {
+        int i = 0;
+        for (Person  a: persons){
+            System.out.printf(i + a.lastName);
             HSSFRow row = sheet.createRow(i);
-            person a = new person();
             HSSFCell firstName = row.createCell(0);
             firstName.setCellValue(a.firstName);
             HSSFCell middleName = row.createCell(1);
@@ -35,9 +29,9 @@ public class homework {
             age.setCellValue(a.age);
             HSSFCell birthPlace = row.createCell(6);
             birthPlace.setCellValue(a.birthPlace);
-
             i++;
         }
+
         sheet.autoSizeColumn(1);
         try {
             book.write(new FileOutputStream("output/123.xls"));
@@ -50,4 +44,5 @@ public class homework {
 
 
     }
+
 }
